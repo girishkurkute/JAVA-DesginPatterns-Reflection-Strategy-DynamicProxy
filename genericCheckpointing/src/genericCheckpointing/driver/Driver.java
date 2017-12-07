@@ -13,14 +13,17 @@ public class Driver {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
-		ProxyCreator pc = new ProxyCreator();
+		String mode = "deser";
+		int N = 1;
+		String opFile = "Output.txt";
 		
+		ProxyCreator pc = new ProxyCreator();
+		//StoreRestoreHandler hnd = new StoreRestoreHandler();
 		StoreRestoreI cpointRef = (StoreRestoreI) pc.createProxy(
-				 new Class[] {
-				     StoreI.class, RestoreI.class
-				 }, 
-				 new StoreRestoreHandler()
-				 );
+				 new Class[] { StoreI.class, RestoreI.class},  new StoreRestoreHandler());
+		
+		
+		
 		
 		MyAllTypesFirst myFirst;
 		MyAllTypesSecond  mySecond;
