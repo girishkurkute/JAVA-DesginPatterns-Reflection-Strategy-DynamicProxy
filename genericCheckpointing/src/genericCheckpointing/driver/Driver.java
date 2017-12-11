@@ -131,6 +131,19 @@ public class Driver {
 				   ((StoreI) cpointRef).writeObj(mySecond,authID, "XML");
 				}
 				
+				System.out.println("deserialization");
+				//deserialization of object
+				hnd.setFileName("output.txt");
+				hnd.openFile();
+				int length = NUM_OF_OBJECTS * 2;
+				int mismatchedCounter = 0;
+				for (int i=0; i<length; i++) 
+				{
+					temp = ((RestoreI) cpointRef).readObj("XML");
+					myRecordRet = (SerializableObject) temp;
+					System.out.println(myRecordRet.toString());
+					
+				}
 				
 				
 				 
