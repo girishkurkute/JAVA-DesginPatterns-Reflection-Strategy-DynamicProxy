@@ -2,12 +2,21 @@ package genericCheckpointing.util;
 
 public class MyAllTypesSecond extends SerializableObject{
 	
-	private double myDoubleT;
-	private float myFloatT;
-	private short myShortT;
-	private char myCharT;
-	private double myOtherDoubleT;
+	public double myDoubleT;
+	public float myFloatT;
+	public short myShortT;
+	public char myCharT;
+	public double myOtherDoubleT;
 	
+	public MyAllTypesSecond(double myDoubleT2, float myFloatT2,
+			short myShortT2, char myCharT2, double myOtherDoubleT2) {
+		// TODO Auto-generated constructor stub
+		myDoubleT = myDoubleT2;
+		myFloatT = myFloatT2;
+		myShortT = myShortT2;
+		myCharT = myCharT2;
+		myOtherDoubleT = myOtherDoubleT2;
+	}
 	public double getMyDoubleT() {
 		return myDoubleT;
 	}

@@ -2,12 +2,23 @@ package genericCheckpointing.util;
 
 public class MyAllTypesFirst extends SerializableObject{
 
-	private int myInt;
-	private int myOtherInt;
-	private long myLong;
-	private long myOtherLong;
-	private String myString;
-	private boolean myBool;
+	public int myInt;
+	public int myOtherInt;
+	public long myLong;
+	public long myOtherLong;
+	public String myString;
+	public boolean myBool;
+	
+	public MyAllTypesFirst(int myInt2, int myOtherInt2, long myLong2,
+			long myOtherLong2, String myString2, boolean myBool2) {
+		// TODO Auto-generated constructor stub
+		myInt = myInt2;
+		myOtherInt = myOtherInt2;
+		myLong = myLong2;
+		myOtherLong = myOtherLong2;
+		myString = myString2;
+		myBool = myBool2;
+	}
 	public int getMyInt() {
 		return myInt;
 	}

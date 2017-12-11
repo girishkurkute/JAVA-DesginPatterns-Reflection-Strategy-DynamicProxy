@@ -2,9 +2,11 @@ package genericCheckpointing.xmlStoreRestore;
 
 import genericCheckpointing.util.FileProcessor;
 import genericCheckpointing.util.GetObject;
+import genericCheckpointing.util.Results;
 import genericCheckpointing.util.SerializableObject;
 
 import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
 import java.util.ArrayList;
@@ -14,8 +16,8 @@ public class StoreRestoreHandler implements InvocationHandler{
 	private String checkpointFile;
 	private String currLine;
 	FileProcessor fprObj = null;
-	
- 	
+	Results rlt = new Results("output.txt");
+ 	XMLSerialization xmlSer = new XMLSerialization(rlt);
 	
 	@Override
 	public Object invoke(Object proxy, Method method, Object[] args)
@@ -34,6 +36,14 @@ public class StoreRestoreHandler implements InvocationHandler{
 				//System.out.println();
 			}
 		}
+		else if(name.equalsIgnoreCase("writeObj"))
+		{
+			SerStrategy str = new XMLSerialization(rlt);
+			if(args[2].equals("XML"))
+			{
+				serializeData((SerializableObject) args[0] , str);
+			}
+		}
 		
 		return currObj;
 	}
@@ -46,9 +56,9 @@ public class StoreRestoreHandler implements InvocationHandler{
 		return currObj = xmlDeserialization.processFile();
 	}
 
-	public void serializeData(SerializableObject sObject, SerStrategy sStrategy) 
+	public void serializeData(SerializableObject sObject, SerStrategy sStrategy) throws IOException 
 	{
-     //   sStrategy,processInput(sObject);
+		xmlSer.processInput(sObject);
 	}
 
 	public void setFileName(String fileNameIn) {

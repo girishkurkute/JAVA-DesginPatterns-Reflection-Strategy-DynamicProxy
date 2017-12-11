@@ -2,6 +2,7 @@ package genericCheckpointing.util;
 
 import java.lang.reflect.Method;
 import java.util.ArrayList;
+import java.util.Random;
 
 public class GetObject {
 
@@ -450,6 +451,13 @@ public class GetObject {
 		 }
 		 
 		 currObj =  obj;
+	}
+
+	public int getRandomNumber(int i, int j) {
+		// TODO Auto-generated method stub
+		Random r = new Random();
+		return r.nextInt((j - i) + 1) + i;
+		
 	}
 
 	

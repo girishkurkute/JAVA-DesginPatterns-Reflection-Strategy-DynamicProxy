@@ -26,7 +26,7 @@ public class Driver {
 		String mode = "";
 		int NUM_OF_OBJECTS = 0;
 		String fileName = "";
-		 ArrayList<Object> ObjectList = new ArrayList<Object>();
+		 ArrayList<SerializableObject> ObjectList = new ArrayList<SerializableObject>();
 		try
 		{
 			if(args.length !=3)
@@ -46,11 +46,11 @@ public class Driver {
 					 new Class[] { StoreI.class, RestoreI.class},  hnd);
 			
 			
-			
+			GetObject allTypObj = new GetObject();
 			String currLine;
 			
-			hnd.setFileName(fileName);
-			hnd.openFile();
+			
+			
 			
 			
 			MyAllTypesFirst myFirst;
@@ -61,13 +61,84 @@ public class Driver {
 			
 			if(mode.equalsIgnoreCase("deser"))
 			{
-				
+				hnd.setFileName(fileName);
+				hnd.openFile();
 				for (int i=0; i<NUM_OF_OBJECTS; i++) 
 				{
 					temp = ((RestoreI) cpointRef).readObj("XML");
 					myRecordRet = (SerializableObject) temp;
 					System.out.println(myRecordRet.toString());
 				}
+			}
+			else if(mode.equalsIgnoreCase("serdeser"))
+			{
+				for (int i=1; i<=NUM_OF_OBJECTS; i++) 
+				{
+					int authID = 0;
+					 int rand = 0;
+					 int myInt;
+					 int myOtherInt;
+					 long myLong;
+					 long myOtherLong;
+					 String myString;
+					 boolean myBool;
+					rand = allTypObj.getRandomNumber(1,100);
+					myInt = rand * i;
+					rand = allTypObj.getRandomNumber(1,100);
+					myOtherInt = rand * i;
+					rand = allTypObj.getRandomNumber(1,100);
+					myLong = rand * 1000 + rand * i;
+					rand = allTypObj.getRandomNumber(1,100);
+					myOtherLong = rand * 1000 + rand * i;
+					rand = allTypObj.getRandomNumber(1,100);
+					myString = "DP" + Integer.toString(rand);
+					rand = allTypObj.getRandomNumber(1,9999);
+					authID = rand;
+					if(i%2 == 0)
+					{
+						myBool = false;
+					}
+					else
+					{
+						myBool = true;
+					}
+					myFirst = new MyAllTypesFirst(myInt,myOtherInt,myLong,myOtherLong,myString,myBool);
+					ObjectList.add(myFirst);
+					((StoreI) cpointRef).writeObj(myFirst,authID, "XML"); 
+					
+					 double myDoubleT;
+					 float myFloatT;
+					 short myShortT;
+					 char myCharT;
+					 double myOtherDoubleT;
+					 
+					 rand = allTypObj.getRandomNumber(1,100);
+					 myDoubleT = rand * i * 3.052;
+						rand = allTypObj.getRandomNumber(1,100);
+						myFloatT = (float) (rand * i * 2.302);
+						rand = allTypObj.getRandomNumber(1,100);
+						myShortT = (short) (rand * 10 + rand * i);
+						rand = allTypObj.getRandomNumber(97,122);
+						myCharT = (char)rand;
+						rand = allTypObj.getRandomNumber(1,100);
+						myOtherDoubleT = rand * 1000 + rand * i;
+						rand = allTypObj.getRandomNumber(1,9999);
+						authID = rand;
+				   mySecond = new MyAllTypesSecond(myDoubleT,myFloatT,myShortT,myCharT,myOtherDoubleT);
+				   ObjectList.add(mySecond);
+				   ((StoreI) cpointRef).writeObj(mySecond,authID, "XML");
+				}
+				
+				//deserialization of object
+				hnd.setFileName("output.txt");
+				hnd.openFile();
+				for (int i=0; i<NUM_OF_OBJECTS; i++) 
+				{
+					temp = ((RestoreI) cpointRef).readObj("XML");
+					myRecordRet = (SerializableObject) temp;
+					System.out.println(myRecordRet.toString());
+				}
+				 
 			}
 			
 			
