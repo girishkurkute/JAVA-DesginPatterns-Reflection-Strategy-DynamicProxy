@@ -131,7 +131,7 @@ public class Driver {
 				   ((StoreI) cpointRef).writeObj(mySecond,authID, "XML");
 				}
 				
-				System.out.println("deserialization");
+				//System.out.println("deserialization");
 				//deserialization of object
 				hnd.setFileName("output.txt");
 				hnd.openFile();
@@ -142,9 +142,13 @@ public class Driver {
 					temp = ((RestoreI) cpointRef).readObj("XML");
 					myRecordRet = (SerializableObject) temp;
 					System.out.println(myRecordRet.toString());
-					
+					SerializableObject currSerObj = ObjectList.get(i);
+					if(!myRecordRet.equals(currSerObj))
+					{
+						mismatchedCounter++;
+					}
 				}
-				
+				System.out.println("Mismatched Counter:"+mismatchedCounter);
 				
 				 
 			}

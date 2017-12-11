@@ -1,36 +1,53 @@
 <DPSerialization>
 <complexType xsi:type="genericCheckpointing.util.MyAllTypesFirst">
-<myInt xsi:type="xsd:int">97</myInt>
-<myOtherInt xsi:type="xsd:int">83</myOtherInt>
-<myLong xsi:type="xsd:long">75075</myLong>
-<myOtherLong xsi:type="xsd:long">14014</myOtherLong>
-<myString xsi:type="xsd:class java.lang.String">DP1</myString>
+<myOtherInt xsi:type="xsd:int">82</myOtherInt>
+<myLong xsi:type="xsd:long">37037</myLong>
+<myOtherLong xsi:type="xsd:long">78078</myOtherLong>
+<myString xsi:type="xsd:class java.lang.String">DP48</myString>
 <myBool xsi:type="xsd:boolean">true</myBool>
 </complexType>
 </DPSerialization>
 <DPSerialization>
 <complexType xsi:type="genericCheckpointing.util.MyAllTypesSecond">
-<myFloatT xsi:type="xsd:float">151.932</myFloatT>
-<myShortT xsi:type="xsd:short">627</myShortT>
-<myCharT xsi:type="xsd:char">q</myCharT>
-<myOtherDoubleT xsi:type="xsd:double">4004.0</myOtherDoubleT>
+<myFloatT xsi:type="xsd:float">117.402</myFloatT>
+<myShortT xsi:type="xsd:short">165</myShortT>
+<myCharT xsi:type="xsd:char">f</myCharT>
+<myOtherDoubleT xsi:type="xsd:double">8008.0</myOtherDoubleT>
 </complexType>
 </DPSerialization>
 <DPSerialization>
 <complexType xsi:type="genericCheckpointing.util.MyAllTypesFirst">
-<myInt xsi:type="xsd:int">80</myInt>
-<myOtherInt xsi:type="xsd:int">90</myOtherInt>
-<myLong xsi:type="xsd:long">95190</myLong>
-<myOtherLong xsi:type="xsd:long">93186</myOtherLong>
-<myString xsi:type="xsd:class java.lang.String">DP87</myString>
+<myInt xsi:type="xsd:int">108</myInt>
+<myOtherInt xsi:type="xsd:int">138</myOtherInt>
+<myLong xsi:type="xsd:long">67134</myLong>
+<myOtherLong xsi:type="xsd:long">36072</myOtherLong>
+<myString xsi:type="xsd:class java.lang.String">DP7</myString>
 <myBool xsi:type="xsd:boolean">false</myBool>
 </complexType>
 </DPSerialization>
 <DPSerialization>
 <complexType xsi:type="genericCheckpointing.util.MyAllTypesSecond">
-<myFloatT xsi:type="xsd:float">138.12</myFloatT>
-<myShortT xsi:type="xsd:short">336</myShortT>
-<myCharT xsi:type="xsd:char">t</myCharT>
-<myOtherDoubleT xsi:type="xsd:double">31062.0</myOtherDoubleT>
+<myFloatT xsi:type="xsd:float">441.984</myFloatT>
+<myShortT xsi:type="xsd:short">948</myShortT>
+<myCharT xsi:type="xsd:char">n</myCharT>
+<myOtherDoubleT xsi:type="xsd:double">5010.0</myOtherDoubleT>
+</complexType>
+</DPSerialization>
+<DPSerialization>
+<complexType xsi:type="genericCheckpointing.util.MyAllTypesFirst">
+<myInt xsi:type="xsd:int">72</myInt>
+<myOtherInt xsi:type="xsd:int">12</myOtherInt>
+<myLong xsi:type="xsd:long">91273</myLong>
+<myOtherLong xsi:type="xsd:long">80240</myOtherLong>
+<myString xsi:type="xsd:class java.lang.String">DP2</myString>
+<myBool xsi:type="xsd:boolean">true</myBool>
+</complexType>
+</DPSerialization>
+<DPSerialization>
+<complexType xsi:type="genericCheckpointing.util.MyAllTypesSecond">
+<myFloatT xsi:type="xsd:float">124.308</myFloatT>
+<myShortT xsi:type="xsd:short">1300</myShortT>
+<myCharT xsi:type="xsd:char">y</myCharT>
+<myOtherDoubleT xsi:type="xsd:double">55165.0</myOtherDoubleT>
 </complexType>
 </DPSerialization>

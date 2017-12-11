@@ -25,7 +25,7 @@ public class XMLSerialization implements SerStrategy{
 		
 		String DPSerStart = "<DPSerialization>";
 		serializedDataList.add(DPSerStart);
-		System.out.println(DPSerStart);
+		//System.out.println(DPSerStart);
 		
 		
 		Class className = sObject.getClass();
