@@ -7,6 +7,7 @@ public class MyAllTypesSecond extends SerializableObject{
 	private short myShortT;
 	private char myCharT;
 	private double myOtherDoubleT;
+	
 	public double getMyDoubleT() {
 		return myDoubleT;
 	}
@@ -36,6 +37,12 @@ public class MyAllTypesSecond extends SerializableObject{
 	}
 	public void setMyOtherDoubleT(double myOtherDoubleT) {
 		this.myOtherDoubleT = myOtherDoubleT;
+	}
+	@Override
+	public String toString() {
+		return "MyAllTypesSecond [myDoubleT=" + myDoubleT + ", myFloatT="
+				+ myFloatT + ", myShortT=" + myShortT + ", myCharT=" + myCharT
+				+ ", myOtherDoubleT=" + myOtherDoubleT + "]";
 	}
 	
 

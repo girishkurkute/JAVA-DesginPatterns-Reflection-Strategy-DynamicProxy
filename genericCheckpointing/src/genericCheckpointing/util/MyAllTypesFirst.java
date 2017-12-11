@@ -44,6 +44,13 @@ public class MyAllTypesFirst extends SerializableObject{
 	public void setMyBool(boolean myBool) {
 		this.myBool = myBool;
 	}
+	@Override
+	public String toString() {
+		return "MyAllTypesFirst [myInt=" + myInt + ", myOtherInt=" + myOtherInt
+				+ ", myLong=" + myLong + ", myOtherLong=" + myOtherLong
+				+ ", myString=" + myString + ", myBool=" + myBool + "]";
+	}
+	
 	
 	
 }
