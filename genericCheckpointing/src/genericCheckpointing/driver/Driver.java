@@ -104,6 +104,7 @@ public class Driver {
 					}
 					myFirst = new MyAllTypesFirst(myInt,myOtherInt,myLong,myOtherLong,myString,myBool);
 					ObjectList.add(myFirst);
+					System.out.println(myFirst.toString());
 					((StoreI) cpointRef).writeObj(myFirst,authID, "XML"); 
 					
 					 double myDoubleT;
@@ -112,8 +113,8 @@ public class Driver {
 					 char myCharT;
 					 double myOtherDoubleT;
 					 
-					 rand = allTypObj.getRandomNumber(1,100);
-					 myDoubleT = rand * i * 3.052;
+					 rand = allTypObj.getRandomNumber(1,9);
+					 myDoubleT = rand ;
 						rand = allTypObj.getRandomNumber(1,100);
 						myFloatT = (float) (rand * i * 2.302);
 						rand = allTypObj.getRandomNumber(1,100);
@@ -126,18 +127,12 @@ public class Driver {
 						authID = rand;
 				   mySecond = new MyAllTypesSecond(myDoubleT,myFloatT,myShortT,myCharT,myOtherDoubleT);
 				   ObjectList.add(mySecond);
+				   System.out.println(mySecond.toString());
 				   ((StoreI) cpointRef).writeObj(mySecond,authID, "XML");
 				}
 				
-				//deserialization of object
-				hnd.setFileName("output.txt");
-				hnd.openFile();
-				for (int i=0; i<NUM_OF_OBJECTS; i++) 
-				{
-					temp = ((RestoreI) cpointRef).readObj("XML");
-					myRecordRet = (SerializableObject) temp;
-					System.out.println(myRecordRet.toString());
-				}
+				
+				
 				 
 			}
 			

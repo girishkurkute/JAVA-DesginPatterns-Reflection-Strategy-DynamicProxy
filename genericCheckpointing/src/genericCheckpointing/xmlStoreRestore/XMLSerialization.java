@@ -34,7 +34,7 @@ public class XMLSerialization implements SerStrategy{
 		tempcls = "<complexType xsi:type=\"" + temp[1];
 		fullClassName = tempcls +"\">";
 		serializedDataList.add(fullClassName);
-		System.out.println(fullClassName);
+		//System.out.println(fullClassName);
 				
 		Field[] fldList = className.getDeclaredFields();
 		
@@ -50,9 +50,27 @@ public class XMLSerialization implements SerStrategy{
 			try
 			{
 				String val = fldList[i].get(sObject).toString();
-				String fullFieldStr = fieldStart + val + "</"+fldName+">";
-				serializedDataList.add(fullFieldStr);
-				System.out.println(fullFieldStr);
+				if(fldType.equalsIgnoreCase("int") || fldType.equalsIgnoreCase("long") ||fldType.equalsIgnoreCase("double"))
+				{
+					if(Double.valueOf(val)<10)
+					{
+						continue;
+						
+					}
+					else
+					{
+						String fullFieldStr = fieldStart + val + "</"+fldName+">";
+						serializedDataList.add(fullFieldStr);
+						//System.out.println(fullFieldStr);
+					}
+				}				
+				else
+				{
+					String fullFieldStr = fieldStart + val + "</"+fldName+">";
+					serializedDataList.add(fullFieldStr);
+					//System.out.println(fullFieldStr);
+				}
+				
 			}
 			catch(Exception e)
 			{
@@ -61,10 +79,10 @@ public class XMLSerialization implements SerStrategy{
 		}
 		String classEnd = "</complexType>";
 		serializedDataList.add(classEnd);
-		System.out.println(classEnd);
+		//System.out.println(classEnd);
 		String DPSerEnd = "</DPSerialization>";
 		serializedDataList.add(DPSerEnd);
-		System.out.println(DPSerEnd);
+		//System.out.println(DPSerEnd);
 		
 		rObj.writeToFile(serializedDataList);
 	}
